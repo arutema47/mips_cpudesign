@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 03/14/2018 05:47:18 PM
-// Design Name: 
-// Module Name: MEMORY
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 
 module CPU_REG(
@@ -31,7 +12,7 @@ module CPU_REG(
     
     reg [31:0] PROGRAM[31:0];
     
-    initial $readmemb("/nobackupkiwi/kentaroy/Vivado/sample1.bin", PROGRAM);
+    initial $readmemb("/adress/to/sample1.bin", PROGRAM);
     
     assign data_out = PROGRAM[addr];
     always @(posedge CLK) if(write) PROGRAM[addr] <= data_in;
@@ -47,7 +28,6 @@ module GPR(
   );
     reg [31:0] r[15:0];
     
-    initial $readmemb("/nobackupkiwi/kentaroy/Vivado/allzero.bin", r);
     
     assign DOUT0 = (REGNUM0==0) ? 0 : r[REGNUM0];
     assign DOUT1 = (REGNUM1==0) ? 0 : r[REGNUM1];
