@@ -28,10 +28,8 @@ module GPR(
   );
     reg [31:0] r[15:0];
     
-    
     assign DOUT0 = (REGNUM0==0) ? 0 : r[REGNUM0];
     assign DOUT1 = (REGNUM1==0) ? 0 : r[REGNUM1];
     always @(posedge CLK) if (WE0) r[REGNUM2] <= DIN0;
-//    always @(posedge CLK) if (WE1) r[REGNUMALU] <= DIN1;
     
 endmodule

@@ -51,7 +51,6 @@ module top_module_mips_v2(
     .ina(ina),.inb(inb),.out(out),.flag(flag),.ALUA(ALUA),.ALUB(ALUB), .INST(INST), .opcode(opcode), .funct(funct), .ALUsrc(ALUsrc)
     );
     
-    
 endmodule
 
 module PC(
@@ -97,9 +96,6 @@ module COUNTER5B(
      
 endmodule
     
-    
-
-
 module ALU(
     input [5:0] opcode,
     input [31:0] ina,
